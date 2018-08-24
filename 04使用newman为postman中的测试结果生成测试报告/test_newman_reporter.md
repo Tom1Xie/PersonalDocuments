@@ -11,7 +11,7 @@
 
 ---
 2 其次，把postman的测试脚本导出为json。为方便大家测试，我把上图中api的collection分享一份，大家可以按照下图的步骤导入链接即可,链接如下。
->https://www.getpostman.com/collections/f7cf9dc8a209accfe529
+>https://www.getpostman.com/collections/f6fbf7036bd5a6d1edd3
 
 操作如图所示：
 
