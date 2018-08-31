@@ -11,7 +11,6 @@ notifications:
   email:
     recipients:
       -tom1xie@163.com
-      -bjwlxie@cn.ibm.com
     on_success: always
     on_failure: always
 
@@ -24,7 +23,6 @@ notifications:
   email:
     recipients:
       -tom1xie@163.com
-      -bjwlxie@cn.ibm.com
     on_success: always
     on_failure: always
 
