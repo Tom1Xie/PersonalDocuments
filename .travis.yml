@@ -6,6 +6,14 @@ node_js:
 - '8'
 matrix:
   fast_finish: true
+  
+notifications:
+  email:
+    recipients:
+      -tom1xie@163.com
+    on_success: always
+    on_failure: always
+
 install:
 - npm install -g newman
 - npm install -g newman-reporter-html
@@ -14,8 +22,7 @@ script:
 notifications:
   email:
     recipients:
-      -yezhuAndroid@163.com
-      -bjwlxie@cn.ibm.com
+      -tom1xie@163.com
     on_success: always
     on_failure: always
 
