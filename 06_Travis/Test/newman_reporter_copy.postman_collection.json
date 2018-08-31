@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "8b9096d4-3401-4f59-8818-fa9575c68998",
+		"name": "01temp_newman_reporter copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api.github.com",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "38851506-879c-485c-ac01-4db15dd898be",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"response is ok\", function() {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\",function() {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"check basic info \",function() {",
+							"    pm.expect(pm.response.json().current_user_url).to.equal(\"https://api.github.com/user\");",
+							"});",
+							"",
+							"pm.test(\"check return response\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var expectedResult ={",
+							"    \"current_user_url\": \"https://api.github.com/user\",",
+							"    \"current_user_authorizations_html_url\": \"https://github.com/settings/connections/applications{/client_id}\",",
+							"    \"authorizations_url\": \"https://api.github.com/authorizations\",",
+							"    \"code_search_url\": \"https://api.github.com/search/code?q={query}{&page,per_page,sort,order}\",",
+							"    \"commit_search_url\": \"https://api.github.com/search/commits?q={query}{&page,per_page,sort,order}\",",
+							"    \"emails_url\": \"https://api.github.com/user/emails\",",
+							"    \"emojis_url\": \"https://api.github.com/emojis\",",
+							"    \"events_url\": \"https://api.github.com/events\",",
+							"    \"feeds_url\": \"https://api.github.com/feeds\",",
+							"    \"followers_url\": \"https://api.github.com/user/followers\",",
+							"    \"following_url\": \"https://api.github.com/user/following{/target}\",",
+							"    \"gists_url\": \"https://api.github.com/gists{/gist_id}\",",
+							"    \"hub_url\": \"https://api.github.com/hub\",",
+							"    \"issue_search_url\": \"https://api.github.com/search/issues?q={query}{&page,per_page,sort,order}\",",
+							"    \"issues_url\": \"https://api.github.com/issues\",",
+							"    \"keys_url\": \"https://api.github.com/user/keys\",",
+							"    \"notifications_url\": \"https://api.github.com/notifications\",",
+							"    \"organization_repositories_url\": \"https://api.github.com/orgs/{org}/repos{?type,page,per_page,sort}\",",
+							"    \"organization_url\": \"https://api.github.com/orgs/{org}\",",
+							"    \"public_gists_url\": \"https://api.github.com/gists/public\",",
+							"    \"rate_limit_url\": \"https://api.github.com/rate_limit\",",
+							"    \"repository_url\": \"https://api.github.com/repos/{owner}/{repo}\",",
+							"    \"repository_search_url\": \"https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}\",",
+							"    \"current_user_repositories_url\": \"https://api.github.com/user/repos{?type,page,per_page,sort}\",",
+							"    \"starred_url\": \"https://api.github.com/user/starred{/owner}{/repo}\",",
+							"    \"starred_gists_url\": \"https://api.github.com/gists/starred\",",
+							"    \"team_url\": \"https://api.github.com/teams\",",
+							"    \"user_url\": \"https://api.github.com/users/{user}\",",
+							"    \"user_organizations_url\": \"https://api.github.com/user/orgs\",",
+							"    \"user_repositories_url\": \"https://api.github.com/users/{user}/repos{?type,page,per_page,sort}\",",
+							"    \"user_search_url\": \"https://api.github.com/search/users?q={query}{&page,per_page,sort,order}\"",
+							"};",
+							"    pm.expect(jsonData).to.eql(expectedResult);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"cartId\":\"a3921000000I3kjAAC\",\r\n   \"contactId\":\" 0012100000VBosIAAT\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.github.com/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "just test to generate a reporter by newman"
+			},
+			"response": []
+		}
+	]
+}

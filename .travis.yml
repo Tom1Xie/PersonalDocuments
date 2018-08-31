@@ -1,0 +1,14 @@
+sudo: required
+dist: trusty
+addons: 
+language: node_js
+node_js:
+- '8'
+matrix:
+  fast_finish: true
+install:
+- npm install -g newman
+- npm install -g newman-reporter-html
+script:
+- newman run 06_Travis/Test/newman_reporter_copy.postman_collection.json  --reporters html --reporter-html-export 06_Travis/Test/TestResult.html
+
