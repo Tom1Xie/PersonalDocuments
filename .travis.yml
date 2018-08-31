@@ -11,4 +11,11 @@ install:
 - npm install -g newman-reporter-html
 script:
 - newman run 06_Travis/Test/newman_reporter_copy.postman_collection.json  --reporters html --reporter-html-export 06_Travis/Test/TestResult.html
+notifications:
+  email:
+    recipients:
+      -yezhuAndroid@163.com
+      -bjwlxie@cn.ibm.com
+    on_success: always
+    on_failure: always
 
