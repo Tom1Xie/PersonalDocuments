@@ -5,13 +5,13 @@
 var http = require("http");  //1.请求node自带的http 模块
 var url = require("url");
 
-function startServer(route) {
+function startServer(route,handle) {
     function onRequest(request,response) {
         //3.从request中解析url
         var pathName = url.parse(request.url).pathname;
         console.log("the request path is "+ pathName);
         //4.路由分发
-        route(pathName);
+        route(handle,pathName);
 
         console.log("Request received");
         response.writeHead(200,{"Content-Type": "text/plain"});
